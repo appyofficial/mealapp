@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { CategoriesScreen } from "./screens";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import MealsNavigator from "./navigation/MealsNavigator";
 
 //fetching fonts
 const fetchFonts = () => {
@@ -22,11 +23,7 @@ export default function App() {
       />
     );
   }
-  return (
-    <View style={styles.container}>
-      <CategoriesScreen />
-    </View>
-  );
+  return <MealsNavigator />;
 }
 
 const styles = StyleSheet.create({
