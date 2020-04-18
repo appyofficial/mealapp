@@ -8,8 +8,8 @@ import MealsNavigator from "./navigation/MealsNavigator";
 //fetching fonts
 const fetchFonts = () => {
   return Font.loadAsync({
-    roboto: "./assets/fonts/Roboto-Regular.ttf",
-    "roboto-bold": "./assets/fonts/Roboto-Bold.ttf",
+    roboto: require("./assets/fonts/Roboto-Regular.ttf"),
+    "roboto-bold": require("./assets/fonts/Roboto-Bold.ttf"),
   });
 };
 
