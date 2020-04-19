@@ -10,26 +10,24 @@ import {
 //constant
 import Colors from "../constants/Colors";
 
-const MealNavigator = createStackNavigator({
-  Categories: {
-    screen: CategoriesScreen,
-    navigationOptions: {
+const MealNavigator = createStackNavigator(
+  {
+    Categories: {
+      screen: CategoriesScreen,
+    },
+    "Category Meal": {
+      screen: CategoryMealScreen,
+    },
+    "Meal Detail": MealDetailScreen,
+  },
+  {
+    defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Colors.primaryColor,
       },
       headerTintColor: Colors.secondryColor,
     },
-  },
-  "Category Meal": {
-    screen: CategoryMealScreen,
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: Colors.primaryColor,
-      },
-      headerTintColor: Colors.secondryColor,
-    },
-  },
-  "Meal Detail": MealDetailScreen,
-});
+  }
+);
 
 export default createAppContainer(MealNavigator);

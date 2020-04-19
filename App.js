@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { CategoriesScreen } from "./screens";
+import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import { enableScreens } from "react-native-screens";
+
+//Navigator
 import MealsNavigator from "./navigation/MealsNavigator";
 
-//fetching fonts
+//Enabling screen for native optimization
+enableScreens();
+
+//Fetching fonts
 const fetchFonts = () => {
   return Font.loadAsync({
     roboto: require("./assets/fonts/Roboto-Regular.ttf"),
