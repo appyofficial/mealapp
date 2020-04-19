@@ -24,8 +24,9 @@ const MealNavigator = createStackNavigator(
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Colors.primaryColor,
+        height: 80,
       },
-      headerTintColor: Colors.secondryColor,
+      headerTintColor: Colors.lightColor,
     },
   }
 );
