@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { CATEGORIES } from "../data/dummyData";
-import Colors from "../constants/Colors.js";
 
 const CategoryMealScreen = (props) => {
   const catId = props.navigation.getParam("categoryId");
@@ -18,10 +17,6 @@ CategoryMealScreen.navigationOptions = (navData) => {
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
   return {
     headerTitle: selectedCategory.title,
-    headerStyle: {
-      backgroundColor: Colors.primaryColor,
-    },
-    headerTintColor: Colors.secondryColor,
   };
 };
 
