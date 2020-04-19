@@ -3,9 +3,9 @@ class Meal {
     id,
     categoryIds,
     title,
-    imageUrl,
-    ingredients,
     steps,
+    ingredients,
+    imageUrl,
     duration,
     complexity,
     affordability,
@@ -16,7 +16,8 @@ class Meal {
   ) {
     this.id = id;
     this.categoryIds = categoryIds;
-    (this.title = title), (this.imageUrl = imageUrl);
+    this.title = title;
+    this.imageUrl = imageUrl;
     this.ingredients = ingredients;
     this.steps = steps;
     this.duration = duration;
