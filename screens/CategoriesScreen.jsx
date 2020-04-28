@@ -41,7 +41,7 @@ const CategoriesScreen = ({ navigation }) => {
 };
 
 CategoriesScreen.navigationOptions = {
-  headerTitle: "Manda's Kitchen",
+  headerTitle: "Amanda's Kitchen",
 };
 
 const styles = StyleSheet.create({

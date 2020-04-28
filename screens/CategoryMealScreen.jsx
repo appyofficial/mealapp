@@ -25,6 +25,7 @@ const CategoryMealScreen = (props) => {
   return (
     <View style={styles.div}>
       <FlatList
+        style={styles.mealItemContainer}
         data={displayedMeals}
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
@@ -42,7 +43,10 @@ CategoryMealScreen.navigationOptions = (navData) => {
 };
 
 const styles = StyleSheet.create({
-  div: {},
+  div: {
+    width: "100%",
+    marginHorizontal: "auto",
+  },
 });
 
 export default CategoryMealScreen;
