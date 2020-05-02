@@ -1,14 +1,16 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { MealItem } from "../components";
 
 const FavouriteScreen = () => {
-  return (
-    <View style={styles.div}>
-      <Text>This is FavouriteScreen.</Text>
-    </View>
-  );
+  return <MealItem />;
 };
 
+FavouriteScreen.navigationOptions = {
+  headerTitle: "Your Favourites",
+};
+
+//Styles
 const styles = StyleSheet.create({
   div: {
     backgroundColor: "lightblue",
