@@ -44,7 +44,7 @@ const CategoriesScreen = ({ navigation }) => {
 
 CategoriesScreen.navigationOptions = (navData) => ({
   headerTitle: "Amanda's Kitchen",
-  headerLeft: (
+  headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={HeaderButton}>
       <Item
         title="Menu"

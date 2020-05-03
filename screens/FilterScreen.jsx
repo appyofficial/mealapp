@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Text, View, StyleSheet, Switch } from "react-native";
 import { HeaderButton } from "../components";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
@@ -13,14 +13,31 @@ const FilterSwitch = (props) => {
   );
 };
 
-const FilterScreen = () => {
+const FilterScreen = (props) => {
+  const { navigation } = props;
+
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
+
+  const saveFilter = useCallback(() => {
+    const appliedFilter = {
+      glutenFree: isGlutenFree,
+      lactoseFree: isLactoseFree,
+      vegan: isVegan,
+      vegeterian: isVegetarian,
+    };
+    console.log(appliedFilter);
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+
+  useEffect(() => {
+    navigation.setParams({ save: saveFilter });
+  }, [saveFilter]);
+
   return (
     <View style={styles.div}>
-      <Text>This is CFilterScreen.</Text>
+      <Text>Filter</Text>
       <FilterSwitch
         label="Gluten free"
         value={isGlutenFree}
@@ -39,7 +56,7 @@ const FilterScreen = () => {
       <FilterSwitch
         label="Vegeterian"
         value={isVegetarian}
-        onChange={(newValue) => isVegetarian(newValue)}
+        onChange={(newValue) => setIsVegetarian(newValue)}
       />
     </View>
   );
@@ -58,11 +75,20 @@ FilterScreen.navigationOptions = (navData) => ({
       />
     </HeaderButtons>
   ),
+  headerRight: () => (
+    <HeaderButtons HeaderButtonComponent={HeaderButton}>
+      <Item
+        title="Save"
+        iconName="ios-save"
+        onPress={navData.navigation.getParam("save")}
+      />
+    </HeaderButtons>
+  ),
 });
 
 const styles = StyleSheet.create({
   div: {
-    backgroundColor: "lightblue",
+    padding: 5,
   },
   filterSwitch: {
     display: "flex",
