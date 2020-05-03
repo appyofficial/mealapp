@@ -9,9 +9,9 @@ const FavouriteScreen = (props) => {
   return <MealList listData={favMeal} navigation={props.navigation} />;
 };
 
-FavouriteScreen.navigationOptions = {
+FavouriteScreen.navigationOptions = (navData) => ({
   headerTitle: "Your Favourites",
-  headerLeft: (
+  headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={HeaderButton}>
       <Item
         title="Menu"
@@ -22,7 +22,7 @@ FavouriteScreen.navigationOptions = {
       />
     </HeaderButtons>
   ),
-};
+});
 
 //Styles
 const styles = StyleSheet.create({

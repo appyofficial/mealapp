@@ -10,9 +10,9 @@ const FilterScreen = () => {
   );
 };
 
-FilterScreen.navigationOptions = {
+FilterScreen.navigationOptions = (navData) => ({
   headerTitle: "Filter Meals",
-  headerLeft: (
+  headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={HeaderButton}>
       <Item
         title="Menu"
@@ -23,7 +23,7 @@ FilterScreen.navigationOptions = {
       />
     </HeaderButtons>
   ),
-};
+});
 
 const styles = StyleSheet.create({
   div: {
