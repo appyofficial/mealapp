@@ -10,7 +10,9 @@ import {
 //dummy data
 import { CATEGORIES } from "../data/dummyData";
 //components
-import { CategoryGridTile } from "../components";
+import { CategoryGridTile, HeaderButton } from "../components";
+//nav import
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 const CategoriesScreen = ({ navigation }) => {
   const renderGridItem = (itemData) => {
@@ -40,9 +42,20 @@ const CategoriesScreen = ({ navigation }) => {
   );
 };
 
-CategoriesScreen.navigationOptions = {
+CategoriesScreen.navigationOptions = (navData) => ({
   headerTitle: "Amanda's Kitchen",
-};
+  headerLeft: (
+    <HeaderButtons HeaderButtonComponent={HeaderButton}>
+      <Item
+        title="Menu"
+        iconName="ios-menu"
+        onPress={() => {
+          navData.navigation.toggleDrawer();
+        }}
+      />
+    </HeaderButtons>
+  ),
+});
 
 const styles = StyleSheet.create({
   div: {
